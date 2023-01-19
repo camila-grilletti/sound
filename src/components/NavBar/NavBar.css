@@ -1,0 +1,47 @@
+/* Brand */
+
+.brand {
+    user-select: none;
+    font-size: 28px;
+}
+
+.decoration {
+    position: relative;
+}
+
+.decoration > div {
+    position: absolute;
+    width: 15px;
+    height: 3px;
+    background: white;
+    left: 17.5px;
+    bottom: 3px;
+    border-radius: 1px;
+}
+
+/* Navbar */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 2em;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+}
+
+.categories a {
+    padding: 1em;
+    transition: all .5s;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.categories a:hover {
+    background-color: white;
+    color: black;
+}
