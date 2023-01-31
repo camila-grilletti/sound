@@ -34,14 +34,20 @@ nav {
     flex-direction: row;
 }
 
-.categories a {
+.categories li {
     padding: 1em;
     transition: all .5s;
     cursor: pointer;
     border-radius: 1px;
 }
 
-.categories a:hover {
+.categories li:hover {
     background-color: white;
     color: black;
+}
+
+@media screen and (max-width: 500px) {
+    .categories {
+        display: none;
+    }
 }
