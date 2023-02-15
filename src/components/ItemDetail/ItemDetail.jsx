@@ -2,10 +2,24 @@ import Button from "../Button/Button";
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css';
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { CartContext } from "../../context/CartContext/CartContext";
 
 
 
 const ItemDetail = ({ product }) => {
+
+    const [add, setAdd] = useState(false);
+    const { addItemtoCart, countCart } = useContext(CartContext);
+
+    if (add) {
+        document.getElementById('itemcount').classList.add('hide');
+    }
+
+    const addToCart = () => {
+        setAdd(true);
+        addItemtoCart({ id: product.id, title: product.title, price: product.price, pictureUrl: product.pictureUrl, description: product.description, quantity: countCart, stock: product.stock })
+    }
 
     return (
         <div className="container">
@@ -25,11 +39,11 @@ const ItemDetail = ({ product }) => {
                             <h2>{product.title}</h2>
                             <p>{product.description}</p>
                             <div className="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
+                                <i className="fa-solid fa-star"></i>
+                                <i className="fa-solid fa-star"></i>
+                                <i className="fa-solid fa-star"></i>
+                                <i className="fa-solid fa-star"></i>
+                                <i className="fa-solid fa-star"></i>
                                 <p className="stars-cant">(1499)</p>
                             </div>
                         </div>
@@ -40,25 +54,29 @@ const ItemDetail = ({ product }) => {
                         </div>
 
                         <div className="shop">
-                            <ItemCount stock={product.stock} />
+                            <div id="itemcount">
+                                <ItemCount stock={product.stock} addCart={() => { addToCart() }} />
+                            </div>
 
                             <div className="buy">
-                                <Button type='' value='Buy Now' />
+                                <Link to={'/cart'}>
+                                    <Button type='' nameButton='Buy Now' onclick={() => {}} />
+                                </Link>
                             </div>
                         </div>
 
                         <div className="delivery-container">
                             <div className="delivery d-first">
-                                <i class='bx bx-navigation' ></i>
-                                <i class='bx bxs-navigation' ></i>
+                                <i className='bx bx-navigation' ></i>
+                                <i className='bx bxs-navigation' ></i>
                                 <div className="position">
                                     <h5>Free Delivery</h5>
                                     <p className="p-delivery"><u className="underline">Enter your Postal code for Delivery Availability</u></p>
                                 </div>
                             </div>
                             <div className="delivery">
-                                <i class='bx bx-package' ></i>
-                                <i class='bx bxs-package' ></i>
+                                <i className='bx bx-package' ></i>
+                                <i className='bx bxs-package' ></i>
                                 <div className="position">
                                     <h5>Return Delivery</h5>
                                     <p className="p-delivery">Free 30 days Delivery Returns. <u className="underline">Details</u></p>

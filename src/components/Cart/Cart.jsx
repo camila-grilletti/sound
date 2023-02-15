@@ -1,0 +1,46 @@
+import './Cart.css';
+import Select from '../Select/Select';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext/CartContext';
+
+
+const Cart = ( { products } ) => {
+
+    const { removeItem } = useContext(CartContext);
+
+    return (
+        <>
+        {
+            products.map((p, index) => {
+                return(
+                    <div className="bag__item" key={index}>
+                        <div className="bag__item--picture">
+                            <img src={p.pictureUrl} alt={p.title} />
+                        </div>
+                        <div className="bag__item--info">
+                            <div className='bag-space'>
+                                <div>
+                                    <h4>{p.title}</h4>
+                                    <p>{p.description}</p>
+                                    <div className='bag-quantity'>
+                                        <p>Quantity</p>
+                                        <Select id={p.id} options={p.quantity} stock={p.stock} />
+                                    </div>
+                                </div>
+                                <u className='item-remove' onClick={() => {removeItem(p.id)}}>Remove</u>
+                            </div>
+                            <div>
+                                <h5>${new Intl.NumberFormat('de-DE').format(p.price)}</h5>
+                            </div>
+                        </div>
+                    </div>
+                )
+            })
+        }
+        </>
+    )
+
+}
+
+
+export default Cart;

@@ -1,0 +1,55 @@
+.container-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8em;
+}
+
+.spinner-box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+/* PULSE BUBBLES */
+
+.pulse-container {
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pulse-bubble {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.pulse-bubble-1 {
+    animation: pulse .4s ease 0s infinite alternate;
+}
+
+.pulse-bubble-2 {
+    animation: pulse .4s ease .2s infinite alternate;
+}
+
+.pulse-bubble-3 {
+    animation: pulse .4s ease .4s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: .25;
+        transform: scale(.75);
+    }
+}

@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useParams } from "react-router-dom";
 import { productsService } from "../../services/products";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import Loader from "../Loader/Loader";
 
 
 const ItemDetailContainer = () => {
@@ -12,11 +13,11 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         productsService.getOne(id).then(response => setProduct(response))
-    }, []);
+    }, [id]);
 
     return (
         <>
-            <ItemDetail product={product} />
+            { product.length !== 0 ? <ItemDetail product={product} /> : <Loader /> }
         </>
     )
 

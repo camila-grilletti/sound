@@ -20,7 +20,7 @@ const Navbar = () => {
                         <Link to={'/category/headphones'}><li>Headphones</li></Link>
                         <Link to={'/category/soundbars'}><li>Soundbars</li></Link>
                     </ul>
-                    <CartWidget/>
+                    <Link to={'/cart'}><CartWidget/></Link>
                 </nav>
             </div>
         </header>

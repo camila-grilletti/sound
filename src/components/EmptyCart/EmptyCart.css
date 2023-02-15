@@ -1,0 +1,16 @@
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4em;
+    row-gap: .5em;
+}
+
+.empty-cart h5 {
+    font-weight: 300;
+}
+
+.empty-cart button {
+    margin-top: .5em;
+}

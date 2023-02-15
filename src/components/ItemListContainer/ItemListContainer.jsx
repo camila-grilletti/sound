@@ -14,6 +14,7 @@ const ItemListContainer = () => {
     useEffect(() => {
         productsService.getAll(categoryId).then(response => setProducts(response));
     }, [categoryId]);
+    
 
     return (
         <>
