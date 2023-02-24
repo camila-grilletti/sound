@@ -6,16 +6,17 @@ import { CartContext } from '../../context/CartContext/CartContext';
 
 // It performs a mapping of the products to show each one with its features. It is contained in CartConteinter
 
-const Cart = ( { products } ) => {
+const Cart = () => {
 
-    const { removeItem } = useContext(CartContext);
+    const { removeItem, productCart } = useContext(CartContext);
+    
 
     return (
         <>
         {
-            products.map((p, index) => {
+            productCart.map((p) => {
                 return(
-                    <div className="bag__item" key={index}>
+                    <div className="bag__item" key={p.id}>
                         <div className="bag__item--picture">
                             <img src={p.pictureUrl} alt={p.title} />
                         </div>
