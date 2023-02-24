@@ -17,7 +17,7 @@ const CartContainer = () => {
 
     // A message will be displayed if the cart has no products in it
     const infoCart = () => {
-        return productCart.length === 0 ? <EmptyCart /> : <Cart products={productCart} />
+        return productCart.length === 0 ? <EmptyCart /> : <Cart/>
     }
 
     // Generates the SweetAlert to display the order ID
