@@ -1,6 +1,6 @@
 # Sound
 
-✨ Sound es un ecommerce ficticio destinado a la venta de auriculares, parlantes y soundbars. ✨
+✨ Sound is a fictitious ecommerce designed to sell headphones, speakers and soundbars. ✨
 Also, this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Tech
