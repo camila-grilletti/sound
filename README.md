@@ -7,7 +7,7 @@ Also, this project was bootstrapped with [Create React App](https://github.com/f
 
 Sound uses a number of open source projects to work properly:
 
-- [node.js]
+- [node.js](https://nodejs.org/es/)
 - [React](https://es.reactjs.org/)
 - [Firebase](https://firebase.google.com/?hl=es)
 
