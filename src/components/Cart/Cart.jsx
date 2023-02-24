@@ -4,6 +4,8 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext/CartContext';
 
 
+// It performs a mapping of the products to show each one with its features. It is contained in CartConteinter
+
 const Cart = ( { products } ) => {
 
     const { removeItem } = useContext(CartContext);

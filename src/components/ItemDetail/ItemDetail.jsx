@@ -2,23 +2,31 @@ import Button from "../Button/Button";
 import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css';
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartContext/CartContext";
 
 
+// Detailed information of the clicked product
 
 const ItemDetail = ({ product }) => {
 
-    const [add, setAdd] = useState(false);
-    const { addItemtoCart, countCart } = useContext(CartContext);
+    const [ add, setAdd ] = useState(false);
+    const { addItemtoCart, countCart, category, categoryName } = useContext(CartContext);
 
+    // Hides the ItemCount component if the 'Add to Cart' button is clicked.
     if (add) {
         document.getElementById('itemcount').classList.add('hide');
     }
 
+    // Changes the name of the category depending on the category ID
+    useEffect(() => {
+        categoryName(product.categoryId);
+    }, [categoryName, product.categoryId])
+
+    // Add product to cart
     const addToCart = () => {
         setAdd(true);
-        addItemtoCart({ id: product.id, title: product.title, price: product.price, pictureUrl: product.pictureUrl, description: product.description, quantity: countCart, stock: product.stock })
+        addItemtoCart({ id: product.id, title: product.title, price: product.price, pictureUrl: product.pictureUrl, description: product.description, quantity: countCart, stock: product.stock });
     }
 
     return (
@@ -26,7 +34,7 @@ const ItemDetail = ({ product }) => {
             <div className="item-detail-container">
                 <div className="ubication">
                     <Link to={'/'}><span>Home</span></Link>/ 
-                    <Link to={`/category/${product.category}`}><span>{product.category}</span></Link>/ 
+                    <Link to={`/category/${product.categoryId}`}><span>{category}</span></Link>/ 
                     <span>{product.title}</span>
                 </div>
                 <div className="item-detail">

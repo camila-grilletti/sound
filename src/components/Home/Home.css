@@ -17,6 +17,8 @@
 
 .img-big {
     max-width: -webkit-fill-available;
+    display: block;
+    margin: auto;
 }
 
 @media screen and (max-width: 500px) {

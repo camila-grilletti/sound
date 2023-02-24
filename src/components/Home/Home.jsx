@@ -3,6 +3,7 @@ import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import './Home.css';
 
 
+// Home page. Contains the total number of products
 
 const Home = () => {
 

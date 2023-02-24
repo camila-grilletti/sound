@@ -32,6 +32,13 @@
     font-size: 22px;
 }
 
+@media screen and (max-width: 850px) {
+    .mycart__columns {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    } 
+}
+
 h2 {
     font-weight: 400;
 }

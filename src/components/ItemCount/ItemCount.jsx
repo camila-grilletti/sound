@@ -4,19 +4,23 @@ import { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../../context/CartContext/CartContext';
 
 
+// It is displayed in the detailed information of the product. Determines the quantity to be added to the cart of the selected product.
+
 const ItemCount = ({stock, addCart}) => {
 
     const { addQuantity } = useContext(CartContext);
     const [ count, setCount ] = useState(1);
 
+    // Adds or subtracts the amount displayed on the component according to the user's choice
     const onAdd = (plus) => {
         if (plus) {
             count === 1 ? setCount(count) : setCount(count - 1);
         } else {
-            setCount(count + 1)
+            setCount(count + 1);
         };
     }
 
+    // Update the quantity in the Context
     useEffect(() => {
         addQuantity(count);
     })
@@ -34,7 +38,7 @@ const ItemCount = ({stock, addCart}) => {
                     <input className='num' type="number" placeholder='0' min='1' max="10" value={count} onChange={e => setCount(e.target.value)}/>
 
                     <div className="button__holder">
-                        <button className="plusminus plus" onClick={() => {if (stock > 0 && stock > count ) {onAdd(false)} }}>
+                        <button className="plusminus plus" onClick={() => {if (stock > 0 && stock > count) {onAdd(false)} }}>
                             <i className="fa-solid fa-plus"></i>
                         </button>
                     </div>

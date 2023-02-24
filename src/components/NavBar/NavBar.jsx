@@ -3,6 +3,8 @@ import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 
 
+// Main Navbar
+
 const Navbar = () => {
 
     return (
@@ -16,9 +18,9 @@ const Navbar = () => {
                         <div></div>
                     </div>
                     <ul className='categories'>
-                        <Link to={'/category/speakers'}><li>Speakers</li></Link>
-                        <Link to={'/category/headphones'}><li>Headphones</li></Link>
-                        <Link to={'/category/soundbars'}><li>Soundbars</li></Link>
+                        <Link to={'/category/1'}><li>Speakers</li></Link>
+                        <Link to={'/category/2'}><li>Headphones</li></Link>
+                        <Link to={'/category/3'}><li>Soundbars</li></Link>
                     </ul>
                     <Link to={'/cart'}><CartWidget/></Link>
                 </nav>

@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# Sound
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+✨ Sound es un ecommerce ficticio destinado a la venta de auriculares, parlantes y soundbars. ✨
+Also, this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Tech
+
+Sound uses a number of open source projects to work properly:
+
+- [node.js]
+- [React](https://es.reactjs.org/)
+- [Firebase](https://firebase.google.com/?hl=es)
+
+## Installation
+
+Sound is running with [node.js](https://nodejs.org/) v8.14.0.
+Please, install the dependencies and then start the server.
 
 ## Available Scripts
 

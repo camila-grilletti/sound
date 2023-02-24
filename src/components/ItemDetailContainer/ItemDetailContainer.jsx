@@ -6,13 +6,16 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import Loader from "../Loader/Loader";
 
 
+// Contains the ItemDetail component and if it doesn't load the information, it displays a loader.
+
 const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState([]);
     const { id } = useParams();
 
+    // Sets the product information depending on the ID
     useEffect(() => {
-        productsService.getOne(id).then(response => setProduct(response))
+        productsService.getOne(id).then(data => setProduct(data));
     }, [id]);
 
     return (

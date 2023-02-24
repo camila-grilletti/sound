@@ -1,6 +1,8 @@
 import './Item.css'
 
 
+// Displays basic product information when viewed on a grid
+
 const Item = ({ title, description, price, pictureUrl }) => {
     
     return (

@@ -2,6 +2,9 @@ import './EmptyCart.css';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 
+
+// Message displayed if there is nothing in the cart
+
 const EmptyCart = () => {
 
     return (
